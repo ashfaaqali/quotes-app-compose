@@ -6,4 +6,4 @@ This project is a simple app developed using Jetpack Compose to display inspirat
 
 ## Screenshots
 
-<img src="app/bl1.png" alt="Screen 1" width="200" style="margin-right: 20"/> <img src="app/bl2.png" alt="Screen 1" width="200"/> <img src="app/bl3.png" alt="Screen 1" width="200"/> 
+<img src="/Llist.png" alt="Screen 1" width="200" style="margin-right: 20"/> <img src="/Llist.png" alt="Screen 1" width="200"/> 
