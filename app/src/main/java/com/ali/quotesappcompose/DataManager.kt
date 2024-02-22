@@ -7,6 +7,8 @@ import com.google.gson.Gson
 
 object DataManager {
 
+    var currentQuote: Quotes? = null
+    var currentPage = mutableStateOf(Pages.LISTING)
     var data = emptyArray<Quotes>()
     var isDataLoaded = mutableStateOf(false)
 
@@ -22,5 +24,14 @@ object DataManager {
 
         data = gson.fromJson(json, Array<Quotes>::class.java)
         isDataLoaded.value = true
+    }
+
+    fun switchPages(quote: Quotes?){
+        if (currentPage.value == Pages.LISTING){
+            currentQuote = quote
+            currentPage.value = Pages.DETAIL
+        } else {
+            currentPage.value = Pages.LISTING
+        }
     }
 }

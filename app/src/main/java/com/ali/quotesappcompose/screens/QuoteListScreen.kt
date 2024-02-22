@@ -12,14 +12,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ali.quotesappcompose.R
 import com.ali.quotesappcompose.models.Quotes
 
 @Composable
-fun QuoteListScreen(data: Array<Quotes>, onClick: ()-> Unit) {
+fun QuoteListScreen(data: Array<Quotes>, onClick: (quote: Quotes)-> Unit) {
     Column(modifier = Modifier.padding(8.dp)) {
 
         Spacer(modifier = Modifier.padding(4.dp))
@@ -38,8 +37,6 @@ fun QuoteListScreen(data: Array<Quotes>, onClick: ()-> Unit) {
 
         Spacer(modifier = Modifier.padding(8.dp))
 
-        QuoteList(data = data) {
-            onClick
-        }
+        QuoteList(data = data, onClick)
     }
 }

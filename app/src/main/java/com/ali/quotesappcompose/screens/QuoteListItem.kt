@@ -31,10 +31,10 @@ import com.ali.quotesappcompose.R
 import com.ali.quotesappcompose.models.Quotes
 
 @Composable
-fun QuoteListItem(quotes: Quotes, onClick: ()-> Unit) {
+fun QuoteListItem(quote: Quotes, onClick: (quote: Quotes) -> Unit) {
     Card(
         modifier = Modifier
-            .clickable { onClick }
+            .clickable { onClick(quote) }
             .padding(8.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
@@ -53,7 +53,7 @@ fun QuoteListItem(quotes: Quotes, onClick: ()-> Unit) {
                 )
 
                 Text(
-                    text = quotes.text,
+                    text = quote.text,
                     fontFamily = FontFamily(Font(R.font.quicksand_semibold)),
                     style = MaterialTheme.typography.bodyLarge,
                     color = Color.Black,
@@ -74,7 +74,7 @@ fun QuoteListItem(quotes: Quotes, onClick: ()-> Unit) {
             Spacer(modifier = Modifier.padding(4.dp))
 
             Text(
-                text = quotes.author,
+                text = quote.author,
                 fontFamily = FontFamily(Font(R.font.quicksand_regular)),
                 style = MaterialTheme.typography.bodyMedium
             )
